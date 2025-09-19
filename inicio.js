@@ -16,17 +16,19 @@ elemento.appendChild(titulo);
 for(let i=0;i < 4;i++){
     const a = document.createElement("a");
     a.href = info[i].url;
-    a.className = "nota";
-    a.id = "nota"+i;
+    a.id = "navA"; 
 
-    const img = document.createElement("img");
-    img.src = "https://static.vecteezy.com/system/resources/thumbnails/013/869/651/small_2x/blank-sticky-note-reminder-paper-png.png";
-    a.appendChild(img);
+    const span = document.createElement("span");
+    span.className = "is-primary";
+    span.textContent = info[i].p;
+    a.appendChild(span);
 
-    const p = document.createElement("p");
-    p.textContent = info[i].p;
-    a.appendChild(p);
+
+    a.appendChild(span);
     
     elemento.appendChild(a);
 }
+
+const footer = document.getElementById("footerID");
+footer.textContent = "&copy; 2025 Victoriano Feijoo | vitivitoriano@gmail.com";
 
